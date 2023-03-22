@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _abs - Entry
- * @int: interger to be rewrittten
+ * @i: interger to be rewrittten
  * Return: Always 0
  */
 

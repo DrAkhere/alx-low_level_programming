@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _islower - Entry
+ * @c: declared variable containing character to test
  * Return: Always 0
  */
 

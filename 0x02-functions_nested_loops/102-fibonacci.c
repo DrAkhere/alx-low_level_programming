@@ -5,11 +5,10 @@
  */
 int main(void)
 {
-	unsigned long fib x, y, z;
+	unsigned long fib, x, y, z;
 
 	x = 0;
 	y = 1;
-
 	for (fib = 0; fib < 50; fib++)
 	{
 		z = x + y;

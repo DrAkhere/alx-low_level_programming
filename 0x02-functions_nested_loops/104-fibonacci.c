@@ -6,13 +6,14 @@
 int main(void)
 {
 	int fib;
-	unsigned long a, b, c, d, e, f, lift;
+	unsigned long a, b, c;
+	unsigned long d, e, f, lift;
 
 	fib = 0;
 	a = 0;
 	b = 1;
 
-	for (fib = 0; fib <= 91; fib++)
+	for (fib = 1; fib <= 91; fib++)
 	{
 		c = a + b;
 		a = b;
@@ -37,7 +38,7 @@ int main(void)
 		else
 			printf("%lu0%lu", c, f);
 		if (fib != 98)
-			printf (", ");
+			printf(", ");
 		fib++;
 	}
 	putchar('\n');

@@ -19,9 +19,9 @@ int main(void)
 			putchar('\n');
 		else
 		{
-			print(", ");
+			printf(", ");
 		}
 	}
-	rerurn (0);
+	return (0);
 }
 

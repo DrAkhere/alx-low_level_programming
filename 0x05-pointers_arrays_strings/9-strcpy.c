@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _strcpy - Entry point
  * @dest: destination
@@ -7,12 +6,11 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int swp = 0;
+	char *swp = dest;
 
-	while (src[swp])
+	while (src)
 	{
-		dest[swp] = src[swp];
-		swp++;
+		*dest++ = *src++;
 	}
-	return (dest);
+	return (src);
 }

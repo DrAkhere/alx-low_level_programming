@@ -8,9 +8,9 @@ char *_strcpy(char *dest, char *src)
 {
 	char *swp = dest;
 
-	while (src)
+	while (*src)
 	{
 		*dest++ = *src++;
 	}
-	return (src);
+	return (swp);
 }

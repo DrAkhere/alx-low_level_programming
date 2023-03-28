@@ -2,19 +2,18 @@
 /**
  * print_rev - Entry point
  * @s: Character to be printed in reverse
- * Return: Return nothing here
+ * Retrun: Return nothing here
  */
 void print_rev(char *s)
 {
-	int x = 0;
+	int x;
 
-	while (s[x] != '\0')
+	for (x = 0; s[x] != '\0'; x++)
 	{
-		x++;
-	}
-	while (x)
-	{
-		_putchar (s[--x]);
+		while (x)
+		{
+			_putchar (s[--x]);
+		}
 	}
 	_putchar('\n');
 }

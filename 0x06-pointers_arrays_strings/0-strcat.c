@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 /**
- * _srtrcat - Entry point for concatenation
+ * _strcat - Entry point for concatenation
  * @dest: The string to concatenate into
  * @src: The string to be concatenated
  * Return: return resulting string dest

@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * rot13 - Entrt point 
+ * rot13 - Entrt point
  * @s: pointer of input string.
  * Return: Returns pointer encoded string.
  */

@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _strpbrk - Entry point for function that search a string
  * @s: string to be searched
@@ -22,5 +23,5 @@ char *_strpbrk(char *s, char *accept)
 		accept = x;
 		s++;
 	}
-	return ("NULL");
+	return (NULL);
 }

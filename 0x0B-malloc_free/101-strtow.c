@@ -73,7 +73,7 @@ char **strtow(char *str)
 		z[x] = malloc(wlen * sizeof(char) + 1);
 		if (z[x] == NULL)
 		{
-			for ( ; x >= 0; --x)
+			for ( ; x >= 0; x--)
 				free(z[x]);
 			free(z);
 			return (NULL);

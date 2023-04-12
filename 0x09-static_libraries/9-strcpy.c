@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _strcpy - Entry point
  * @dest: destination

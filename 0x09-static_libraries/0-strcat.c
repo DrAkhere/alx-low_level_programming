@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdlib.h>
 /**
  * _strcat - Entry point for concatenation
  * @dest: The string to concatenate into
@@ -8,13 +9,15 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int l1, l2, i;
+	int x, y;
 
-	l1 = strlen(dest);
-	l2 = strlen(src);
-	for (i = 0; i <= l2; i++)
+	for (x = 0; dest[x] != '\0'; x++)
 	{
-		dest[l1 + i] = src[i];
 	}
+	for (y = 0; src[y] != '\0'; y++)
+	{
+		dest[x + y] = src[y];
+	}
+	dest[x + y] = '\0';
 	return (dest);
 }

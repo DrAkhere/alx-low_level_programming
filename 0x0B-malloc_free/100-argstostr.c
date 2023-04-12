@@ -10,7 +10,8 @@ char *argstostr(int ac, char **av)
 {
 	int x;
 	int y;
-	int l,concatlen;
+	int l;
+	int concatlen;
 	char *z;
 
 	if (ac == 0)

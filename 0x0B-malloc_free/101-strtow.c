@@ -51,60 +51,39 @@ int countword(char *str, int powc, char fchar)
  */
 char **strtow(char *str)
 {
-	int wc;
-	int x;
-	int y;
-	int wlen;
-	int getfchar;
-	int len;
+	int wc, x, y, wlen, getfchar, len;
 	char **z;
 
 	for (len = 0; str[len]; len++)
-	{
 		;
-	}
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 	wc = countword(str, 0, 0);
 	if (len == 0 || wc == 0)
-	{
 		return (NULL);
-	}
 	z = malloc((wc + 1) * sizeof(void *));
 	if (z == NULL)
-	{
 		return (NULL);
-	}
 	for (x = 0, wlen = 0; x < wc; x++)
 	{
 		/* here you Allocate memory for nested elements */
 		wlen = countword(str, x + 1, 0);
 		if (x == 0 && str[x] != ' ')
-		{
 			wlen++;
-		}
 		z[x] = malloc(wlen * sizeof(char) + 1);
 		if (z[x] == NULL)
 		{
 			for ( ; x >= 0; --x)
-			{
 				free(z[x]);
-			}
 			free(z);
 			return (NULL);
 		}
 		/*Now initialize each element of the nested array with the word*/
 		getfchar = countword(str, x + 1, 1);
 		if (str[0] != ' ' && x > 0)
-		{
 			getfchar++;
-		}
 		else if (str[0] == ' ')
-		{
 			getfchar++;
-		}
 		for (y = 0; y < wlen; y++)
 			z[x][y] = str[getfchar + y];
 		z[x][y] = '\0';

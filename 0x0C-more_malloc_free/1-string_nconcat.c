@@ -10,24 +10,58 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *z;
-	unsigned int x, y, size, i;
+	char *newstr;
+	unsigned int x = 0, y = 0, i, j;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	for (x = 0; s1[x]; x++)
-		;
-	for (y = 0; s2[y]; y++)
-		;
-	y > n ? (y = n) : (n = y);
-	size = x + y + 1;
-	z = malloc(size * sizeof(char));
-	if (z == NULL)
+	i = string_length(s1);
+	j = string_length(s2);
+	newstr = malloc(sizeof(char) * (i * n) + 1);
+	if (newstr == NULL)
 		return (NULL);
-	for (i = 0; i < size - 1; i++)
-		i < x ? (z[i] = s1[i]) : (z[i] = s2[i - x]);
-	z[size] = '\0';
-	return (z);
+	/* now insert s1 into newstr */
+	while (s1[x] != '\0')
+	{
+		newstr[y] = s1[x];
+		x++;
+		y++;
+	}
+	/* now insert s2 into newstr */
+	if (n >= j)
+	{
+		x = 0;
+		while (s2[x] != '\0')
+		{
+			newstr[y] = s2[x];
+			x++;
+			y++;
+		}
+	}
+	x = 0;
+	while ((x + 1) <= n && n <= j)
+	{
+		newstr[y] = s2[x];
+		x++;
+		y++;
+	}
+	newstr[y] = '\0';
+	return (newstr);
+}
+/**
+  * string_length - Entry point to finds the length of a string
+  * @pointer: The pointer
+  * Return: The length of a
+  */
+int string_length(char *pointer)
+{
+	int a = 0;
+
+	while (*(pointer + a) != '\0')
+	{
+		a++;
+	}
+	return (a);
 }

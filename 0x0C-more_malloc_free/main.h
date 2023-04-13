@@ -8,4 +8,6 @@ int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _putchar(char c);
 int main(void);
+int string_length(char *pointer);
+int main1(int argc, char *argv[]);
 #endif

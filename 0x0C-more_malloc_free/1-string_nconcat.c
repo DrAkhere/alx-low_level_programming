@@ -19,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	i = string_length(s1);
 	j = string_length(s2);
-	newstr = malloc(sizeof(char) * (i * n) + 1);
+	newstr = malloc(sizeof(char) * (i + n + 1));
 	if (newstr == NULL)
 		return (NULL);
 	/* now insert s1 into newstr */

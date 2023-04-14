@@ -12,7 +12,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int y;
 	char *j;
 
-	if ((nmemb || size) == 0)
+	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
@@ -23,10 +23,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	while (y < (nmemb * size))
+	for (y = 0; y < (nmemb * size); y++)
 	{
 		j[y] = 0;
-		y++;
 	}
 	return (j);
 }

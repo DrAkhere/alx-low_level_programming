@@ -10,4 +10,5 @@ int _putchar(char c);
 int main(void);
 int string_length(char *pointer);
 int main1(int argc, char *argv[]);
+int mul(int argc, char *argv[]);
 #endif

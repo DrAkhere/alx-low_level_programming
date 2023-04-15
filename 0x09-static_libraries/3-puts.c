@@ -1,4 +1,8 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 /**
  * _puts - Entry point
  * @str: string to be printed out
@@ -6,12 +10,5 @@
  */
 void _puts(char *str)
 {
-	int x = 0;
-
-	while (str[x] != '\0')
-	{
-		_putchar(str[x]);
-		x++;
-	}
-	_putchar('\n');
+	puts(str);
 }

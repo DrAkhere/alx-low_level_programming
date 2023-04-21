@@ -2,78 +2,41 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-/**
- * p_char - Entry point to print character
- * @c: The character to print
- */
-void p_char(va_list c)
-{
-	printf("%c", va_arg(c, int));
-}
-/**
- * p_integer - Entry point to print integer
- * @i: The integer to print
- */
-void p_integer(va_list i)
-{
-	printf("%d", va_arg(i, int));
-}
-/**
- * p_float - Entry point to print float
- * @f: The float to print
- */
-void p_float(va_list f)
-{
-	printf("%f", va_arg(f, double));
-}
-/**
- * p_string - Entry point to print string
- * @s: The string to print
- */
-void p_string(va_list s)
-{
-	char *string;
 
-	string = va_arg(s, char *);
-	if (string == NULL)
-	{
-		string = "(nil)";
-	}
-	printf("%s", string);
-}
 /**
- * print_all - Entry point to print anything
- * @format: The symbol that represent anything that can be printed
+ * print_all - Entry that prints anything.
+ * @format: The types of arguments passed to the function.
+ * Return: Return nothing.
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int x, y;
-	char *separator;
 	va_list pa;
-	v_types valid_types[]{
-		{c, p_char},
-		{i, p_integer},
-		{f, p_float},
-		{s, p_string},
-	}
+	unsigned int x = 0;
+	char *sym;
 
-	x = y = 0;
-	separator = "";
 	va_start(pa, format);
 	while (format && format[x])
 	{
-		y = 0;
-		while (y < 4)
+		switch (format[x++])
 		{
-			if (format[x] == *valid_types[y])
-			{
-				printf("%s", separator);
-				valid_types[y].f(pa);
-				separator = ", ";
-			}
-			y++;
+			case 'c':
+				printf("%c", va_arg(pa, int));
+				break;
+			case 'i':
+				printf("%d", va_arg(pa, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(pa, double));
+				break;
+			case 's':
+				sym = va_arg(pa, char *);
+				printf("%s", sym != NULL ? sym : "(nil)");
+				break;
+			default:
+				continue;
 		}
-		x++;
+		if (format[x])
+			printf(", ");
 	}
 	printf("\n");
 }

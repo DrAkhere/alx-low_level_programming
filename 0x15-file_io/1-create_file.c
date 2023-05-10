@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * creat_file - Entry point to create a new file
+ * create_file - Entry point to create a new file
  * @filename: The name of the file to create
  * @text_content: The NULL terminated string to write to the file
- * Return: Return 1 on success, -1 on file = NULL & failure 
+ * Return: Return 1 on success, -1 on file = NULL & failure
  * con't: failure means(file can't be created, written, write “fails”, etc)
  * NB: if the file already exists, truncate it
  * if text_content is NULL create an empty file

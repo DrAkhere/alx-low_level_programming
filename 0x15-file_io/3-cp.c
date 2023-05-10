@@ -34,8 +34,10 @@ int main(int argc, char *argv[])
 	}
 	textFileClosed = close(txtFil);
 	if (textFileClosed != 0)
-	{	dprintf(STDERR_FILENO, "Error: Can't close txtfil %d\n", txtFil);
-       		exit(100);}
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close txtfil %d\n", txtFil);
+		exit(100);
+	}
 	fileTextClosed = close(filTxt);
 	if (fileTextClosed != 0)
 		dprintf(STDERR_FILENO, "Error: Can't close filTxt %d\n", filTxt), exit(100);

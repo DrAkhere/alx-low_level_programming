@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	int txtFil, filTxt, readFile, writeDone, textFileClosed, fileTextClosed;
-	char buffer[BUFFERSIZE];
+	char *buffer[BUFFERSIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		writeDone = write(filTxt, buffer, readFile);
 		if (writeDone != readFile)
 		{	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-	       		exit(99); }
+			exit(99); }
 	}
 	if (readFile == -1)
 	{
